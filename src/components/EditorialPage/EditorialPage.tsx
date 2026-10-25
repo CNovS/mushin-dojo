@@ -1,6 +1,9 @@
 import type { MouseEventHandler } from 'react'
 import { Eyebrow } from '../Eyebrow/Eyebrow'
 import { TextLink } from '../TextLink/TextLink'
+import img1 from '../../../public/assets/imagenes/jason-briscoe-HN_4K2diUWs-unsplash.jpg'
+import img2 from '../../../public/assets/imagenes/5010-ol7jRS-OQIk-unsplash.jpg'
+
 import './EditorialPage.scss'
 
 export interface EditorialPageContent {
@@ -20,6 +23,11 @@ interface EditorialPageProps {
   className: string
 }
 
+function getImg(image:string){
+  if (image == "img1") return img1 
+  else return img2
+}
+
 export function EditorialPage({ content, onNavigate, className }: EditorialPageProps) {
   return (
     <main className={`editorial-page ${className}`}>
@@ -31,7 +39,7 @@ export function EditorialPage({ content, onNavigate, className }: EditorialPageP
         </div>
       </section>
       <figure className="editorial-page__image page-wrap">
-        <img src={content.image} alt={content.imageAlt} />
+        <img src={getImg(content.image)} alt={content.imageAlt} />
         <figcaption>{content.imageNote}</figcaption>
       </figure>
       <section className="editorial-page__story page-wrap">

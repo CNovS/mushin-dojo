@@ -2,6 +2,7 @@ import type { MouseEventHandler } from 'react'
 import { Eyebrow } from '../../components/Eyebrow/Eyebrow'
 import { TextLink } from '../../components/TextLink/TextLink'
 import './ContactPage.scss'
+import esfera from '../../../public/assets/referencias/ESFERA.svg'
 
 interface ContactPageProps {
   onNavigate: MouseEventHandler<HTMLAnchorElement>
@@ -18,7 +19,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
           <div><span className="contact-page__label">Escríbenos</span><span className="contact-page__value">[Email de contacto]</span></div>
           <div><span className="contact-page__label">Dónde encontrarnos</span><span className="contact-page__value">[Ciudad o ubicación]</span></div>
         </div>
-        <img className="contact-page__sphere" src="/assets/referencias/ESFERA.svg" alt="" aria-hidden="true" />
+        <img className="contact-page__sphere" src={esfera} alt="" aria-hidden="true" />
       </section>
       <section className="contact-page__note">
         <div className="page-wrap contact-page__note-inner">

@@ -3,6 +3,8 @@ import { BrandPrinciples } from '../../components/BrandPrinciples/BrandPrinciple
 import { Eyebrow } from '../../components/Eyebrow/Eyebrow'
 import { TextLink } from '../../components/TextLink/TextLink'
 import './HomePage.scss'
+import ciclistaImg from '../../../public/assets/imagenes/afiq-fatah-2v9jQM2CPjc-unsplash.jpg'
+import esfera from '../../../public/assets/referencias/ESFERA.svg'
 
 interface HomePageProps {
   onNavigate: MouseEventHandler<HTMLAnchorElement>
@@ -19,8 +21,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <TextLink href="#/quienes-somos" onClick={onNavigate}>Descubre Mushin Dojo</TextLink>
         </div>
         <div className="home-page__visual">
-          <img className="home-page__photo" src="/assets/imagenes/afiq-fatah-2v9jQM2CPjc-unsplash.jpg" alt="Ciclista en movimiento durante su entrenamiento" />
-          <img className="home-page__sphere" src="/assets/referencias/ESFERA.svg" alt="" aria-hidden="true" />
+          <img className="home-page__photo" src={ciclistaImg} alt="Ciclista en movimiento durante su entrenamiento" />
+          <img className="home-page__sphere" src={esfera} alt="" aria-hidden="true" />
           <span className="home-page__caption">01 — Encuentra tu foco</span>
         </div>
         <div className="home-page__bottom" aria-hidden="true"><span>MENTE · CUERPO · MOVIMIENTO</span><span>DESLIZA PARA EXPLORAR ↓</span></div>

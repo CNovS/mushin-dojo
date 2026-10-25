@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "install": "pnpm install --node-linker=hoisted --package-import-method=copy",
     "predeploy": "pnpm build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "comment": "tras push para actualizar github pages",
+    "update": "pnpm run deploy" 
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",

@@ -17,7 +17,7 @@ export function SiteHeader({ pathname, onNavigate }: SiteHeaderProps) {
   return (
     <header className="site-header">
       <a className="site-header__brand" href="#/" onClick={onNavigate} aria-label="Mushin Dojo, inicio">
-        <img src={logoAzul} alt="Mushin Dojo" />
+        <img src={logoAzul} alt="Mushin Dojo" fetchPriority="high"/>
       </a>
       <button
         className="site-header__menu-toggle"

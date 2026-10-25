@@ -19,7 +19,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
           <div><span className="contact-page__label">Escríbenos</span><span className="contact-page__value">[Email de contacto]</span></div>
           <div><span className="contact-page__label">Dónde encontrarnos</span><span className="contact-page__value">[Ciudad o ubicación]</span></div>
         </div>
-        <img className="contact-page__sphere" src={esfera} alt="" aria-hidden="true" />
+        <img className="contact-page__sphere" src={esfera} alt="" aria-hidden="true" fetchPriority="high"/>
       </section>
       <section className="contact-page__note">
         <div className="page-wrap contact-page__note-inner">

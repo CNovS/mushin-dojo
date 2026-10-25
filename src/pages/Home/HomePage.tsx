@@ -21,8 +21,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <TextLink href="#/quienes-somos" onClick={onNavigate}>Descubre Mushin Dojo</TextLink>
         </div>
         <div className="home-page__visual">
-          <img className="home-page__photo" src={ciclistaImg} alt="Ciclista en movimiento durante su entrenamiento" />
-          <img className="home-page__sphere" src={esfera} alt="" aria-hidden="true" />
+          <img className="home-page__photo" src={ciclistaImg} alt="Ciclista en movimiento durante su entrenamiento" fetchPriority="high"/>
+          <img className="home-page__sphere" src={esfera} alt="" aria-hidden="true" fetchPriority="high"/>
           <span className="home-page__caption">01 — Encuentra tu foco</span>
         </div>
         <div className="home-page__bottom" aria-hidden="true"><span>MENTE · CUERPO · MOVIMIENTO</span><span>DESLIZA PARA EXPLORAR ↓</span></div>

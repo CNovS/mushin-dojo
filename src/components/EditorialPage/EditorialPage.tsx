@@ -39,7 +39,7 @@ export function EditorialPage({ content, onNavigate, className }: EditorialPageP
         </div>
       </section>
       <figure className="editorial-page__image page-wrap">
-        <img src={getImg(content.image)} alt={content.imageAlt} />
+        <img src={getImg(content.image)} alt={content.imageAlt} fetchPriority="high"/>
         <figcaption>{content.imageNote}</figcaption>
       </figure>
       <section className="editorial-page__story page-wrap">

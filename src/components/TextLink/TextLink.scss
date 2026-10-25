@@ -1,0 +1,25 @@
+@use '../../styles/tokens' as *;
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid rgba($navy, .45);
+  color: $navy;
+  font-size: .9rem;
+  transition: border-color .2s ease, gap .2s ease;
+
+  &__arrow {
+    display: inline-block;
+    font-size: 1.05em;
+    transition: transform .2s ease;
+  }
+
+  &:hover {
+    gap: .95rem;
+    border-color: $navy;
+
+    .text-link__arrow { transform: translate(2px, -2px); }
+  }
+}

@@ -1,0 +1,42 @@
+@use '../../styles/tokens' as *;
+
+.editorial-page {
+  &__heading { padding-top: clamp(4rem, 8vw, 7rem); padding-bottom: clamp(2.5rem, 5vw, 4rem); }
+  &__heading .eyebrow { margin-bottom: 2rem; }
+  &__heading-grid { display: grid; grid-template-columns: 1fr .52fr; gap: 3rem; align-items: end; }
+  &__heading h1 {
+    max-width: 850px;
+    margin: 0;
+    color: $navy;
+    font-size: clamp(3.3rem, 7.3vw, 7rem);
+    font-weight: 450;
+    letter-spacing: -.075em;
+    line-height: .94;
+  }
+  &__heading-grid > p { max-width: 400px; margin: 0 0 .4rem; color: rgba($navy, .76); font-size: 1rem; line-height: 1.75; }
+  &__image { margin: 0; }
+  &__image img { display: block; width: 100%; max-height: 570px; aspect-ratio: 2.15; border-radius: 2px; object-fit: cover; object-position: center 55%; }
+  &__image figcaption { display: flex; align-items: center; gap: .6rem; padding-top: .8rem; color: $muted; font-size: .7rem; letter-spacing: .03em; }
+  &__image figcaption::before { width: 6px; height: 6px; flex: 0 0 auto; border-radius: 50%; background: var(--page-accent, #{$sand}); content: ''; }
+  &__story { display: grid; grid-template-columns: .42fr 1fr; gap: 3rem; padding-top: clamp(4.5rem, 9vw, 8rem); padding-bottom: clamp(5rem, 10vw, 9rem); }
+  &__label { display: flex; gap: 1rem; padding-top: .65rem; color: $muted; font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; }
+  &__label span:first-child { color: $sand; }
+  &__copy { max-width: 720px; }
+  &__copy h2 { margin: 0 0 2rem; color: $navy; font-size: clamp(2.4rem, 4.3vw, 4.2rem); font-weight: 450; letter-spacing: -.055em; line-height: 1.04; }
+  &__copy p { max-width: 660px; color: rgba($navy, .76); font-size: 1rem; line-height: 1.8; }
+}
+
+@media (max-width: 760px) {
+  .editorial-page {
+    &__heading { padding-top: 3.6rem; padding-bottom: 2.2rem; }
+    &__heading .eyebrow { margin-bottom: 1.4rem; }
+    &__heading-grid { grid-template-columns: 1fr; gap: 1.3rem; }
+    &__heading h1 { font-size: clamp(3.2rem, 12vw, 5.2rem); }
+    &__heading-grid > p { font-size: .96rem; }
+    &__image img { min-height: 270px; aspect-ratio: 1.16; }
+    &__story { grid-template-columns: 1fr; gap: 1.8rem; padding-top: 4rem; padding-bottom: 5rem; }
+    &__label { padding-top: 0; }
+    &__copy h2 { margin-bottom: 1.5rem; font-size: clamp(2.3rem, 9vw, 3.4rem); }
+    &__copy p { font-size: .95rem; }
+  }
+}

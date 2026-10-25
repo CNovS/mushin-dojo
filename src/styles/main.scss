@@ -1,0 +1,33 @@
+@use 'tokens' as *;
+
+:root {
+  font-family: 'Overused Grotesk', 'Avenir Next', Avenir, 'Segoe UI', sans-serif;
+  color: $navy;
+  background: $cream;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  --page-gutter: clamp(1.25rem, 6.2vw, 6rem);
+}
+
+* { box-sizing: border-box; }
+html { min-width: 320px; scroll-behavior: smooth; }
+body { min-width: 320px; min-height: 100vh; margin: 0; background: $cream; }
+body, button, a { font-family: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+button { color: inherit; }
+::selection { color: $cream; background: $navy; }
+.site-shell { min-height: 100vh; overflow: clip; }
+.page-wrap { padding-right: var(--page-gutter); padding-left: var(--page-gutter); }
+
+@media (min-width: 1500px) {
+  .page-wrap { padding-right: max(var(--page-gutter), calc((100vw - 1320px) / 2)); padding-left: max(var(--page-gutter), calc((100vw - 1320px) / 2)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}

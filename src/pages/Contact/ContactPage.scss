@@ -1,0 +1,32 @@
+@use '../../styles/tokens' as *;
+
+.contact-page {
+  &__hero { position: relative; min-height: 620px; padding-top: clamp(4rem, 8vw, 7rem); padding-bottom: 5rem; background: url('/assets/fondos/MUSHIN%20DOJO_Degradado_1_vertical.svg') center / cover no-repeat; }
+  &__hero .eyebrow { margin-bottom: 2rem; }
+  &__hero h1 { position: relative; z-index: 1; max-width: 950px; margin: 0; color: $navy; font-size: clamp(3.5rem, 8vw, 7.5rem); font-weight: 450; letter-spacing: -.075em; line-height: .94; }
+  &__hero h1 span { color: $sand; }
+  &__intro { position: relative; z-index: 1; max-width: 470px; margin: 1.8rem 0 2.7rem; color: rgba($navy, .77); font-size: 1rem; line-height: 1.8; }
+  &__details { position: relative; z-index: 2; display: flex; gap: clamp(2rem, 8vw, 8rem); }
+  &__details > div { display: flex; flex-direction: column; gap: .6rem; }
+  &__label { color: $muted; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; }
+  &__value { color: $navy; font-size: 1rem; }
+  &__sphere { position: absolute; right: var(--page-gutter); bottom: 3.5rem; width: clamp(145px, 24vw, 270px); height: auto; opacity: .86; }
+  &__note { padding-top: 3.5rem; padding-bottom: 3.5rem; background: $navy; color: $cream; }
+  &__note-inner { display: flex; align-items: end; justify-content: space-between; gap: 2rem; }
+  &__note-inner p { margin: 0; font-size: clamp(1.8rem, 3.6vw, 3.4rem); letter-spacing: -.04em; line-height: 1.1; }
+  &__note-inner p span { color: $sky; }
+  &__note-inner .text-link { flex-shrink: 0; border-color: rgba($cream, .5); color: $cream; }
+}
+
+@media (max-width: 760px) {
+  .contact-page {
+    &__hero { min-height: 660px; padding-top: 3.8rem; padding-bottom: 15rem; background-position: 58% center; }
+    &__hero h1 { font-size: clamp(3.35rem, 12.2vw, 5.6rem); }
+    &__intro { max-width: 410px; margin: 1.5rem 0 2rem; font-size: .96rem; }
+    &__details { flex-direction: column; gap: 1.4rem; }
+    &__sphere { right: var(--page-gutter); bottom: 1.2rem; width: clamp(135px, 42vw, 200px); }
+    &__note { padding-top: 2.6rem; padding-bottom: 2.6rem; }
+    &__note-inner { align-items: start; flex-direction: column; gap: 1.5rem; }
+    &__note-inner p { font-size: 2rem; }
+  }
+}

@@ -1,0 +1,19 @@
+@use '../../styles/tokens' as *;
+
+.principle-card {
+  min-height: 330px;
+  padding: clamp(1.35rem, 2.2vw, 2.2rem);
+  border-radius: 18px;
+  background: $cream;
+  box-shadow: 0 10px 30px rgba($navy, .06);
+
+  &__index { display: block; margin-bottom: 1.4rem; color: $sand; font-size: .68rem; letter-spacing: .14em; }
+  h3 { margin: 0 0 .75rem; color: $ink; font-size: clamp(1.65rem, 2.25vw, 2.4rem); font-weight: 500; letter-spacing: -.055em; line-height: 1; }
+  p { margin: 0 0 1.2rem; color: rgba($navy, .72); font-size: .88rem; line-height: 1.6; }
+  &__tone { padding-top: .95rem; border-top: 1px solid rgba($sand, .45); }
+  &__tone strong { color: $navy; }
+}
+
+@media (max-width: 760px) {
+  .principle-card { min-height: 0; padding: 1.5rem; border-radius: 14px; }
+}

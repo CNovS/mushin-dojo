@@ -1,0 +1,3 @@
+@use '../../styles/tokens' as *;
+
+.why-mushin-page { --page-accent: #{$sky}; }

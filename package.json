@@ -8,7 +8,9 @@
     "typecheck": "tsc --noEmit",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "install": "pnpm install --node-linker=hoisted --package-import-method=copy"
+    "install": "pnpm install --node-linker=hoisted --package-import-method=copy",
+    "predeploy": "pnpm build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
@@ -20,6 +22,7 @@
   "devDependencies": {
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "gh-pages": "^6.3.0",
     "sass-embedded": "^1.106.1",
     "typescript": "^7.0.2"
   }

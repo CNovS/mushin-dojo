@@ -1,17 +1,23 @@
 @use '../../styles/tokens' as *;
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   z-index: 50;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 92px;
+  width: 90%;
+  min-height: 76px;
+  margin: 0 auto;
   padding: 0 var(--page-gutter);
-  background: rgba($cream, .96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba($ink, .72);
+  background: rgba($cream, .68);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  height: 5%;
 
   &__brand { display: inline-flex; align-items: center; }
   &__brand img { display: block; width: 174px; height: auto; }
@@ -21,12 +27,16 @@
     display: inline-flex;
     align-items: center;
     gap: .55rem;
-    color: rgba($navy, .7);
-    font-size: .9rem;
-    transition: color .2s ease;
+    min-height: 38px;
+    border-radius: 999px;
+    padding: 0 1rem;
+    color: $ink;
+    font-size: .82rem;
+    transition: color .2s ease, background-color .2s ease;
   }
-  &__navigation a:hover, &__navigation a.is-active { color: $navy; }
-  &__navigation .nav-contact { color: $navy; }
+  &__navigation a:hover, &__navigation a.is-active { color: $cream; background: $ink; }
+  &__navigation .nav-contact { color: $ink; }
+  &__navigation .nav-contact:hover, &__navigation .nav-contact.is-active { color: $cream; background: $ink; }
   &__arrow { display: inline-block; font-size: 1.05em; transition: transform .2s ease; }
   &__navigation a:hover &__arrow { transform: translate(2px, -2px); }
   &__menu-toggle { display: none; }
@@ -34,17 +44,18 @@
 
 @media (max-width: 760px) {
   .site-header {
-    min-height: 76px;
+    min-height: 68px;
+    padding: 0 .9rem;
 
-    &__brand img { width: 145px; }
+    &__brand img { width: 142px; }
     &__menu-toggle { display: inline-flex; align-items: center; gap: .7rem; border: 0; padding: .65rem 0 .65rem .65rem; background: transparent; font-size: .83rem; }
     &__menu-icon { display: flex; width: 18px; flex-direction: column; gap: 5px; }
     &__menu-icon i { display: block; width: 18px; height: 1px; background: $navy; transition: transform .2s ease; }
     &__menu-icon.is-open i:first-child { transform: translateY(3px) rotate(45deg); }
     &__menu-icon.is-open i:last-child { transform: translateY(-3px) rotate(-45deg); }
-    &__navigation { position: absolute; top: 100%; right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: .4rem var(--page-gutter) 1.1rem; background: $cream; box-shadow: 0 14px 18px rgba($navy, .06); }
+    &__navigation { position: absolute; top: 100%; right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: .4rem var(--page-gutter) 1.1rem; border-bottom: 1px solid rgba($ink, .72); background: rgba($cream, .94); box-shadow: 0 14px 18px rgba($navy, .06); }
     &__navigation.is-open { display: flex; flex-direction: column; }
-    &__navigation a { min-height: 48px; border-bottom: 1px solid rgba($navy, .1); }
+    &__navigation a { min-height: 48px; border-bottom: 1px solid rgba($navy, .1); border-radius: 0; padding: 0 .6rem; }
     &__navigation a:last-child { border-bottom: 0; }
     &__navigation .nav-contact { justify-content: space-between; }
   }

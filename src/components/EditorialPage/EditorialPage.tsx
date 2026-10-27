@@ -10,7 +10,7 @@ export interface EditorialPageContent {
   eyebrow: string
   title: string
   intro: string
-  image: string
+  image: 'img1' | 'img2'
   imageAlt: string
   imageNote: string
   storyHeading: string
@@ -23,10 +23,7 @@ interface EditorialPageProps {
   className: string
 }
 
-function getImg(image:string){
-  if (image == "img1") return img1 
-  else return img2
-}
+const editorialImages = { img1, img2 } as const
 
 export function EditorialPage({ content, onNavigate, className }: EditorialPageProps) {
   return (
@@ -39,7 +36,14 @@ export function EditorialPage({ content, onNavigate, className }: EditorialPageP
         </div>
       </section>
       <figure className="editorial-page__image page-wrap">
-        <img src={getImg(content.image)} alt={content.imageAlt} fetchPriority="high"/>
+        <img
+          src={editorialImages[content.image as keyof typeof editorialImages]}
+          alt={content.imageAlt}
+          width="1600"
+          height="744"
+          loading="eager"
+          decoding="async"
+        />
         <figcaption>{content.imageNote}</figcaption>
       </figure>
       <section className="editorial-page__story page-wrap">

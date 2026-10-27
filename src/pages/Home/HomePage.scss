@@ -4,22 +4,28 @@
   &__hero {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr .9fr;
-    align-items: center;
-    min-height: min(710px, calc(100svh - 92px));
-    padding: clamp(4rem, 8vw, 7.5rem) var(--page-gutter) 6rem;
+    height: 100svh;
+    min-height: 560px;
+    padding: 76px var(--page-gutter) 1.25rem;
     background: $cream url('/assets/fondos/MUSHIN%20DOJO_Degradado_1_Horizontal.svg') center / cover no-repeat;
   }
-  &__hero-copy { position: relative; z-index: 2; padding-bottom: 1.8rem; }
-  &__hero h1 { margin: 0; color: $navy; font-size: clamp(4.2rem, 9.2vw, 8.8rem); font-weight: 500; letter-spacing: -.075em; line-height: .88; }
-  &__hero h1 span { color: $sand; }
-  &__hero-intro { margin: 2.1rem 0 1.65rem; color: rgba($navy, .8); font-size: clamp(1.05rem, 1.5vw, 1.3rem); }
-  &__visual { position: relative; justify-self: end; width: min(100%, 510px); aspect-ratio: .91; }
-  &__photo { position: absolute; inset: 0 0 7% 9%; width: 91%; height: 93%; border-radius: 48% 48% 3px 3px; object-fit: cover; object-position: 50% 50%; }
-  &__visual::before { position: absolute; z-index: 1; top: 8%; left: 2%; width: 38%; aspect-ratio: 1; border: 1px solid rgba($cream, .65); border-radius: 50%; content: ''; }
-  &__sphere { position: absolute; z-index: 2; right: -8%; bottom: 0; width: clamp(120px, 20vw, 230px); height: auto; filter: drop-shadow(0 12px 26px rgba($navy, .12)); }
-  &__caption { position: absolute; z-index: 3; right: 0; bottom: 3.5%; color: $cream; font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; writing-mode: vertical-rl; }
-  &__bottom { position: absolute; right: var(--page-gutter); bottom: 1.8rem; left: var(--page-gutter); display: flex; justify-content: space-between; color: rgba($navy, .55); font-size: .62rem; letter-spacing: .12em; }
+  &__carousel { position: relative; display: grid; width: min(100%, 1200px); min-height: 0; grid-template-rows: minmax(0, 1fr) 4rem; margin: 0 auto; }
+  &__slide { position: relative; display: grid; min-height: 0; place-items: center; overflow: hidden; }
+  &__slide-image { position: absolute; width: 100%; max-height: 100%; aspect-ratio: 1; object-fit: contain; }
+  &__slide-copy { position: relative; z-index: 1; width: min(390px, 76vw); margin-top: -1rem; text-align: center; }
+  &__slide-copy h1 { margin: 0 0 .9rem; color: $ink; font-size: clamp(2.7rem, 6vw, 5rem); font-weight: 500; letter-spacing: -.075em; line-height: .94; }
+  &__slide-copy p { margin: 0 auto 1.3rem; color: rgba($ink, .74); font-size: clamp(.85rem, 1.3vw, 1rem); }
+  &__slide-copy .text-link { display: inline-flex; border: 1px solid rgba($ink, .35); border-radius: 999px; padding: .55rem 1rem; font-size: .75rem; }
+  &__carousel-controls { position: absolute; right: 0; bottom: 3.25rem; left: 0; display: flex; align-items: center; justify-content: space-between; pointer-events: none; }
+  &__arrow { display: grid; width: clamp(34px, 3.2vw, 48px); height: clamp(34px, 3.2vw, 48px); place-items: center; border: 1px solid $ink; border-radius: 50%; background: rgba(214, 238, 250, 0); color: $ink; font-size: 1.1rem; cursor: pointer; pointer-events: auto; transition: background-color .2s, color .2s; }
+  &__arrow:hover { background: transparent; color: $ink; }
+  &__dots { display: none; }
+  &__carousel-pagination { position: absolute; right: 0; bottom: 3.25rem; left: 0; display: flex; justify-content: center; gap: clamp(.55rem, 1.3vw, 1rem); }
+  &__carousel-pagination button { width: clamp(12px, 1.2vw, 20px); aspect-ratio: 1; border: 1px solid $ink; border-radius: 50%; padding: 0; background: transparent; cursor: pointer; }
+  &__carousel-pagination button[aria-current='true'] { background: $ink; }
+  &__hero-footer { position: absolute; right: 0; bottom: 1.25rem; left: 0; width: 90%; margin: 0 auto; }
+  &__hero-footer-line { height: 1px; background: $ink; }
+  &__hero-footer-meta { display: flex; justify-content: space-between; padding-top: .65rem; color: rgba($ink, .72); font-size: .67rem; letter-spacing: .04em; }
   &__intro { padding-top: clamp(5rem, 10vw, 9rem); padding-bottom: clamp(5rem, 10vw, 9rem); }
   &__intro > .eyebrow { margin-bottom: 2.5rem; }
   &__intro-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 4rem; align-items: start; }
@@ -35,21 +41,18 @@
   &__quote-label { color: rgba($navy, .6); font-size: .65rem; letter-spacing: .16em; }
 }
 
-@media (min-width: 1500px) {
-  .home-page__hero, .home-page__bottom { padding-right: max(var(--page-gutter), calc((100vw - 1320px) / 2)); padding-left: max(var(--page-gutter), calc((100vw - 1320px) / 2)); }
-}
-
 @media (max-width: 760px) {
   .home-page {
-    &__hero { grid-template-columns: 1fr; gap: 2rem; min-height: auto; padding-top: 4.2rem; padding-bottom: 4.8rem; background-position: center; }
-    &__hero-copy { padding-bottom: 0; }
-    &__hero h1 { font-size: clamp(4.5rem, 16vw, 7.3rem); }
-    &__hero-intro { margin-top: 1.4rem; }
-    &__visual { justify-self: center; width: min(84%, 390px); margin: 0 auto 1.5rem; }
-    &__sphere { right: -13%; width: clamp(115px, 34vw, 190px); }
-    &__caption { right: -3%; bottom: 4%; }
-    &__bottom { right: var(--page-gutter); bottom: 1.45rem; left: var(--page-gutter); font-size: .53rem; }
-    &__bottom span:last-child { display: none; }
+    &__hero { height: 100svh; min-height: 520px; padding: 68px 1.1rem 4.2rem; }
+    &__slide-image { width: 120%; max-height: 120%; }
+    &__slide-copy { width: min(300px, 78vw); margin-top: 0; }
+    &__slide-copy h1 { font-size: clamp(2.7rem, 11vw, 4.1rem); }
+    &__slide-copy p { max-width: 240px; }
+    &__carousel { grid-template-rows: minmax(0, 1fr) 4rem; }
+    &__carousel-controls { bottom: 0.5rem; }
+    &__carousel-pagination { bottom: 0.5rem; }
+    &__hero-footer { bottom: .85rem; width: 90%; }
+    &__hero-footer-meta { font-size: .58rem; }
     &__intro { padding-top: 4.5rem; padding-bottom: 4.8rem; }
     &__intro > .eyebrow { margin-bottom: 1.7rem; }
     &__intro-grid { grid-template-columns: 1fr; gap: 1.6rem; }

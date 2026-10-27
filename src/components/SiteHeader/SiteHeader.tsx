@@ -2,7 +2,7 @@ import { useEffect, useState, type MouseEventHandler } from 'react'
 import type { PagePath } from '../../types/navigation'
 import { PAGE_LINKS } from '../../types/navigation'
 import './SiteHeader.scss'
-import logoAzul from '../../../public/assets/logos/MUSHIN DOJO_Logo_Principal_AzulOscuro.svg'
+import logo from '../../../public/assets/logos/MUSHIN DOJO_Logo_Principal_Simplificado_Negro.svg'
 
 interface SiteHeaderProps {
   pathname: PagePath
@@ -17,7 +17,7 @@ export function SiteHeader({ pathname, onNavigate }: SiteHeaderProps) {
   return (
     <header className="site-header">
       <a className="site-header__brand" href="#/" onClick={onNavigate} aria-label="Mushin Dojo, inicio">
-        <img src={logoAzul} alt="Mushin Dojo" fetchPriority="high"/>
+        <img src={logo} alt="Mushin Dojo" fetchPriority="high" />
       </a>
       <button
         className="site-header__menu-toggle"

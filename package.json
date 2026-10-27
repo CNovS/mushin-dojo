@@ -12,7 +12,8 @@
     "predeploy": "pnpm build",
     "deploy": "gh-pages -d dist",
     "comment": "tras push para actualizar github pages",
-    "update": "pnpm run deploy" 
+    "update": "pnpm run deploy",
+    "run": "pnpm dev"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
